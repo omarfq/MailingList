@@ -56,7 +56,7 @@ func (s *MailServer) GetEmail(ctx context.Context, req *pb.GetEmailRequest) (*pb
 }
 
 func (s *MailServer) GetEmailBatch(ctx context.Context, req *pb.GetEmailBatchRequest) (*pb.GetEmailBatchResponse, error) {
-	log.Printf("gRPC GetEmailBatch")
+	log.Printf("gRPC GetEmailBatch: page:%v count:%v", req.Page, req.Count)
 
 	params := mdb.GetEmailBatchQueryParams{
 		Page: int(req.Page),
